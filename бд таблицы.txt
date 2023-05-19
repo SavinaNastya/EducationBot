@@ -1,0 +1,39 @@
+CREATE TABLE `English` (
+	`CodeChild` INT NOT NULL,
+	PRIMARY KEY (`CodeChild`)
+);
+
+CREATE TABLE `Child` (
+	`Code` INT NOT NULL AUTO_INCREMENT,
+	`Name` VARCHAR(255),
+	`Date` VARCHAR(255),
+	`ContactNumber` VARCHAR(255),
+	`Parent` VARCHAR(255),
+	PRIMARY KEY (`Code`)
+);
+
+CREATE TABLE `Logic` (
+	`CodeChild` INT NOT NULL,
+	PRIMARY KEY (`CodeChild`)
+);
+
+CREATE TABLE `Origami` (
+	`CodeChild` INT NOT NULL,
+	PRIMARY KEY (`CodeChild`)
+);
+
+CREATE TABLE `World` (
+	`CodeChild` INT NOT NULL,
+	PRIMARY KEY (`CodeChild`)
+);
+
+ALTER TABLE `English` ADD CONSTRAINT `English_fk0` FOREIGN KEY (`CodeChild`) REFERENCES `Child`(`Code`);
+
+ALTER TABLE `Logic` ADD CONSTRAINT `Logic_fk0` FOREIGN KEY (`CodeChild`) REFERENCES `Child`(`Code`);
+
+ALTER TABLE `Origami` ADD CONSTRAINT `Origami_fk0` FOREIGN KEY (`CodeChild`) REFERENCES `Child`(`Code`);
+
+ALTER TABLE `World` ADD CONSTRAINT `World_fk0` FOREIGN KEY (`CodeChild`) REFERENCES `Child`(`Code`);
+
+
+
